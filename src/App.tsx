@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import Marquee from '@/components/Marquee'
 import Features from '@/components/Features'
+import Discover from '@/components/Discover'
 
 function App() {
   useLenis()
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <Marquee />
         <Features />
+        <Discover />
       </main>
     </div>
   )
