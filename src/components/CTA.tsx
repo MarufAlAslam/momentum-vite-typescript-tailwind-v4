@@ -73,7 +73,7 @@ const CTA = () => {
           <div className="grid grid-cols-2 gap-0 items-center">
             {/* Left Content */}
             <div className="p-20 z-10 relative">
-              <h2 className="text-[48px] font-medium text-[#020617] mb-6 leading-tight">
+              <h2 className="text-[36px] font-medium text-[#020617] mb-6 leading-tight">
                 Start Building with<br />Momentum
               </h2>
               <p className="text-[20px] text-[#475569] mb-8 leading-relaxed">
