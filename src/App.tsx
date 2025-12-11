@@ -7,6 +7,7 @@ import Discover from '@/components/Discover'
 import SimpleText from '@/components/SimpleText'
 import Testimonials from '@/components/Testimonials'
 import Pricing from '@/components/Pricing'
+import FAQ from '@/components/FAQ'
 
 function App() {
   useLenis()
@@ -22,6 +23,7 @@ function App() {
         <SimpleText />
         <Testimonials />
         <Pricing />
+        <FAQ />
       </main>
     </div>
   )
