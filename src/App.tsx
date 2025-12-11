@@ -1,5 +1,6 @@
 import { useLenis } from '@/hooks/useLenis'
 import Navbar from '@/components/Navbar'
+import Hero from '@/components/Hero'
 
 function App() {
   useLenis()
@@ -8,7 +9,7 @@ function App() {
     <div className="min-h-screen">
       <Navbar />
       <main>
-        {/* Your content here */}
+        <Hero />
       </main>
     </div>
   )
