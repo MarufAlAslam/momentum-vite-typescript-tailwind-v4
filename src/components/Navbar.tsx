@@ -9,7 +9,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-12">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <h1 className="text-[22px] font-bold font-ubuntu leading-none" style={{ color: '#030616' }}>
+              <h1 className="text-2xl font-bold font-ubuntu leading-none" style={{ color: '#030616' }}>
                 Momentum
               </h1>
             </div>
