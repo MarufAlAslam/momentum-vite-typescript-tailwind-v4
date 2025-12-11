@@ -45,10 +45,10 @@ const FAQ = () => {
       <div className="px-12 max-w-[900px] mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-[64px] font-medium text-[#030712] mb-4 leading-[74px]">
+          <h2 className="text-[48px] lg:text-[64px] font-medium text-[#030712] mb-4 leading-[58px] lg:leading-[74px]">
             FAQ
           </h2>
-          <p className="text-[20px] font-normal text-[#475569]">
+          <p className="text-[18px] lg:text-[20px] font-normal text-[#475569]">
             Frequently Asked Questions
           </p>
         </div>

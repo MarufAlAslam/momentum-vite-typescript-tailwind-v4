@@ -14,10 +14,10 @@ const Discover = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-[64px] font-medium text-[#030712] mb-4 leading-[74px]">
+          <h2 className="text-[48px] lg:text-[64px] font-medium text-[#030712] mb-4 leading-[58px] lg:leading-[74px]">
             Discover unlimited creative<br />possibilities
           </h2>
-          <p className="text-[20px] font-normal text-[#475569]">
+          <p className="text-[18px] lg:text-[20px] font-normal text-[#475569]">
             Your go-to source for quick and accurate responses<br />and top notch resources base
           </p>
         </motion.div>

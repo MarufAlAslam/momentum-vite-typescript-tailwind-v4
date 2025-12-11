@@ -110,11 +110,15 @@ const StarRating = ({ rating }: { rating: number }) => {
 }
 
 const Testimonials = () => {
+  // Split testimonials into two rows for marquee
+  const firstRow = testimonials.slice(0, 5)
+  const secondRow = testimonials.slice(5, 9)
+
   return (
     <section className="py-20 bg-[#f8fafc]">
       <div className="px-12 max-w-[1400px] mx-auto">
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-3 gap-6">
+        {/* Static Grid for desktop */}
+        <div className="hidden lg:grid grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -150,6 +154,99 @@ const Testimonials = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Marquee for mobile/tablet */}
+        <div className="lg:hidden space-y-6">
+          {/* First Row Marquee */}
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-6"
+              animate={{ x: [0, "-50%"] }}
+              transition={{
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {[...firstRow, ...firstRow].map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="bg-white border border-[#e2e8f0] rounded-2xl p-6 shadow-sm w-[85%] md:w-[45%] flex-shrink-0"
+                >
+                  {/* Star Rating */}
+                  <StarRating rating={testimonial.rating} />
+                  
+                  {/* Feedback */}
+                  <p className="text-[16px] text-[#020617] font-normal mb-6 leading-relaxed">
+                    {testimonial.feedback}
+                  </p>
+                  
+                  {/* Author Info */}
+                  <div className="flex items-center gap-3">
+                    <img 
+                      src={testimonial.author.avatar} 
+                      alt={testimonial.author.name}
+                      className="w-[54px] h-[54px] rounded-full object-cover"
+                    />
+                    <div>
+                      <p className="text-[16px] text-[#020617] font-normal">
+                        {testimonial.author.name}
+                      </p>
+                      <p className="text-[16px] text-[#475569] font-normal">
+                        {testimonial.author.designation}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Second Row Marquee - Reverse Direction */}
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-6"
+              animate={{ x: ["-50%", "0%"] }}
+              transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {[...secondRow, ...secondRow].map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="bg-white border border-[#e2e8f0] rounded-2xl p-6 shadow-sm w-[85%] md:w-[45%] flex-shrink-0"
+                >
+                  {/* Star Rating */}
+                  <StarRating rating={testimonial.rating} />
+                  
+                  {/* Feedback */}
+                  <p className="text-[16px] text-[#020617] font-normal mb-6 leading-relaxed">
+                    {testimonial.feedback}
+                  </p>
+                  
+                  {/* Author Info */}
+                  <div className="flex items-center gap-3">
+                    <img 
+                      src={testimonial.author.avatar} 
+                      alt={testimonial.author.name}
+                      className="w-[54px] h-[54px] rounded-full object-cover"
+                    />
+                    <div>
+                      <p className="text-[16px] text-[#020617] font-normal">
+                        {testimonial.author.name}
+                      </p>
+                      <p className="text-[16px] text-[#475569] font-normal">
+                        {testimonial.author.designation}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

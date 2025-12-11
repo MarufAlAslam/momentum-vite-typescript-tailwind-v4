@@ -4,14 +4,14 @@ const Footer = () => {
   return (
     <footer className="bg-white py-16">
       <div className="px-12 max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-2 gap-16 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
           {/* Left Section - Newsletter */}
           <div>
             <h3 className="text-[24px] font-semibold text-[#020617] mb-8" style={{ fontFamily: 'Ubuntu, sans-serif' }}>
               Momentum
             </h3>
             <div className="mb-4">
-              <div className="flex gap-2 w-2/3">
+              <div className="flex gap-2 md:w-2/3">
                 <input
                   type="email"
                   placeholder="name@email.com"
@@ -29,7 +29,7 @@ const Footer = () => {
           </div>
 
           {/* Right Section - 3 Columns */}
-          <div className="grid grid-cols-3 gap-12">
+          <div className="grid grid-cols-3 gap-8 lg:gap-12">
             {/* Product Column */}
             <div>
               <h4 className="text-[16px] font-semibold text-[#020617] mb-6">Product</h4>

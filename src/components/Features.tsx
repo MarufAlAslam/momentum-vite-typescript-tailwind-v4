@@ -11,23 +11,23 @@ const Features = () => {
       <div className="px-12 max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-[64px] font-medium text-[#030712] mb-4 leading-[74px]">
+          <h2 className="text-[48px] lg:text-[64px] font-medium text-[#030712] mb-4 leading-[58px] lg:leading-[74px]">
             All AI tools are just in one<br />place and simple to use
           </h2>
-          <p className="text-[20px] font-normal text-[#475569]">
+          <p className="text-[18px] lg:text-[20px] font-normal text-[#475569]">
             Get started with AI quickly and easily with<br />all your tools at your fingertips.
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Time Saving Card - Spans 2 columns */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="col-span-2 border border-[#e2e8f0] rounded-[24px] p-6 bg-[#f8fafc]"
+            className="col-span-2 lg:col-span-2 border border-[#e2e8f0] rounded-[24px] p-6 bg-[#f8fafc]"
           >
             {/* Image */}
             <div className="mb-6 rounded-xl overflow-hidden">

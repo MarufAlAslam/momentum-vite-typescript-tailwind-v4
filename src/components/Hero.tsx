@@ -48,7 +48,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[64px] leading-[74px] font-medium text-[#020617] mb-6 max-w-4xl"
+            className="text-[48px] lg:text-[64px] leading-[58px] lg:leading-[74px] font-medium text-[#020617] mb-6 max-w-4xl"
           >
             Access all your AI tools in a single platform
           </motion.h1>
@@ -58,7 +58,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-[20px] font-normal text-[#292f38] mb-10 max-w-2xl"
+            className="text-[18px] lg:text-[20px] font-normal text-[#292f38] mb-10 max-w-2xl"
           >
             Foster a collaborative environment where teams can manage all their ai tools on a unified platform.
           </motion.p>

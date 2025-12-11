@@ -11,10 +11,10 @@ const SimpleText = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-[64px] font-medium text-[#030712] mb-6 leading-[74px]">
+          <h2 className="text-[48px] lg:text-[64px] font-medium text-[#030712] mb-6 leading-[58px] lg:leading-[74px]">
             All AI tools are just in one<br />place and simple to use
           </h2>
-          <p className="text-[20px] font-normal text-[#475569] leading-relaxed">
+          <p className="text-[18px] lg:text-[20px] font-normal text-[#475569] leading-relaxed">
             Get started with AI quickly and easily with<br />all your tools at your fingertips.
           </p>
         </motion.div>
