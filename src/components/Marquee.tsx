@@ -22,21 +22,21 @@ const Marquee = () => {
         </p>
 
         <div className="relative overflow-hidden">
-          {/* Left fade */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
+          {/* Left fade - hidden on mobile */}
+          <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
           
-          {/* Right fade */}
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
+          {/* Right fade - hidden on mobile */}
+          <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
           
-          {/* Seamless infinite scroll - animate from -50% to 0% */}
+          {/* Seamless infinite scroll - faster on mobile */}
           <motion.div
-            className="flex gap-[54px] items-center"
+            className="flex gap-8 lg:gap-[54px] items-center"
             animate={{ x: ["-50%", "0%"] }}
             transition={{
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 30,
+                duration: 15, // Faster on mobile (was 30)
                 ease: "linear",
               },
             }}
@@ -47,7 +47,7 @@ const Marquee = () => {
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="h-10 w-auto opacity-40 hover:opacity-60 transition-opacity"
+                  className="h-8 lg:h-10 w-auto opacity-40 hover:opacity-60 transition-opacity"
                 />
               </div>
             ))}

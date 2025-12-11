@@ -48,7 +48,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[48px] lg:text-[64px] leading-[58px] lg:leading-[74px] font-medium text-[#020617] mb-6 max-w-4xl"
+            className="text-[28px] lg:text-[48px] xl:text-[64px] leading-[38px] lg:leading-[58px] xl:leading-[74px] font-medium text-[#020617] mb-6 max-w-4xl"
           >
             Access all your AI tools in a single platform
           </motion.h1>
@@ -68,16 +68,16 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex items-center gap-4 mb-16"
+            className="flex flex-col lg:flex-row items-center gap-3 lg:gap-4 mb-16 w-full lg:w-auto px-6 lg:px-0"
           >
             <button 
               onClick={() => setIsVideoOpen(true)}
-              className="inline-flex items-center gap-2 px-6 py-3 text-[15px] font-normal text-gray-700 bg-white border border-gray-200 rounded-full hover:bg-gray-50 transition-all"
+              className="w-full lg:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-[15px] font-normal text-gray-700 bg-white border border-gray-200 rounded-full hover:bg-gray-50 transition-all"
             >
               <Play className="w-4 h-4 fill-current" />
               See how it works
             </button>
-            <button className="px-6 py-3 text-[15px] font-normal text-white bg-[#020617] rounded-full hover:bg-[#020617]/90 transition-all">
+            <button className="w-full lg:w-auto px-6 py-3 text-[15px] font-normal text-white bg-[#020617] rounded-full hover:bg-[#020617]/90 transition-all">
               Start for free
             </button>
           </motion.div>
@@ -87,7 +87,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="w-full max-w-[1280px] p-6 rounded-[28px]"
+            className="w-full max-w-[1280px] p-2.5 lg:p-6 rounded-[16px] lg:rounded-[28px]"
             style={{ backgroundColor: '#f9fafb' }}
           >
             <img 

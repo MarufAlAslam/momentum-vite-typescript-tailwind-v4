@@ -116,7 +116,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-20 bg-[#f8fafc]">
-      <div className="px-12 max-w-[1400px] mx-auto">
+      <div className="md:px-12 px-5 max-w-[1400px] mx-auto">
         {/* Static Grid for desktop */}
         <div className="hidden lg:grid grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
@@ -164,7 +164,7 @@ const Testimonials = () => {
               className="flex gap-6"
               animate={{ x: [0, "-50%"] }}
               transition={{
-                duration: 30,
+                duration: 7.5,
                 repeat: Infinity,
                 ease: "linear"
               }}
@@ -209,7 +209,7 @@ const Testimonials = () => {
               className="flex gap-6"
               animate={{ x: ["-50%", "0%"] }}
               transition={{
-                duration: 25,
+                duration: 6.25,
                 repeat: Infinity,
                 ease: "linear"
               }}

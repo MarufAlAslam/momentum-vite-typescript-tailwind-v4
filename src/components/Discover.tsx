@@ -5,7 +5,7 @@ import discoverImage from '@/assets/discover.avif'
 const Discover = () => {
   return (
     <section className="py-20 bg-white">
-      <div className="px-12 max-w-[1400px] mx-auto">
+      <div className="md:px-12 px-5 max-w-[1400px] mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,11 +14,11 @@ const Discover = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-[48px] lg:text-[64px] font-medium text-[#030712] mb-4 leading-[58px] lg:leading-[74px]">
-            Discover unlimited creative<br />possibilities
+          <h2 className="text-[28px] lg:text-[48px] xl:text-[64px] font-medium text-[#030712] mb-4 leading-[38px] lg:leading-[58px] xl:leading-[74px]">
+            Discover unlimited creative<br className="hidden lg:block" />possibilities
           </h2>
           <p className="text-[18px] lg:text-[20px] font-normal text-[#475569]">
-            Your go-to source for quick and accurate responses<br />and top notch resources base
+            Your go-to source for quick and accurate responses<br className="hidden lg:block" />and top notch resources base
           </p>
         </motion.div>
 
@@ -39,7 +39,7 @@ const Discover = () => {
         </motion.div>
 
         {/* Bottom Features */}
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Get instant answers */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

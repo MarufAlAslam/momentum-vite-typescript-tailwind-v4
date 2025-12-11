@@ -99,10 +99,10 @@ const Pricing = () => {
 
   return (
     <section className="py-20 bg-white">
-      <div className="px-12 max-w-[1400px] mx-auto">
+      <div className="md:px-12 px-5 max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-[48px] lg:text-[64px] font-medium text-[#030712] mb-4 leading-[58px] lg:leading-[74px]">
+          <h2 className="text-[28px] lg:text-[48px] xl:text-[64px] font-medium text-[#030712] mb-4 leading-[38px] lg:leading-[58px] xl:leading-[74px]">
             Simple pricing plans
           </h2>
           <p className="text-[18px] lg:text-[20px] font-normal text-[#475569] mb-12">

@@ -3,7 +3,7 @@ import { Twitter, Facebook, Youtube } from 'lucide-react'
 const Footer = () => {
   return (
     <footer className="bg-white py-16">
-      <div className="px-12 max-w-[1400px] mx-auto">
+      <div className="md:px-12 px-5 max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
           {/* Left Section - Newsletter */}
           <div>
@@ -29,7 +29,7 @@ const Footer = () => {
           </div>
 
           {/* Right Section - 3 Columns */}
-          <div className="grid grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-8 lg:gap-12">
             {/* Product Column */}
             <div>
               <h4 className="text-[16px] font-semibold text-[#020617] mb-6">Product</h4>
@@ -99,7 +99,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright and Social Media Icons */}
-        <div className="flex justify-between items-center">
+        <div className="flex md:flex-row flex-col md:gap-0 gap-6 justify-between items-center">
           <p className="text-[14px] text-[#64748b]">
             Momentum. All right reserved. © 2024
           </p>
