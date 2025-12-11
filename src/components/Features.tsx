@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import aiTool1 from '@/assets/ai-tool-1.svg'
 import aiTool2 from '@/assets/ai-tool-2.svg'
 import aiTool3 from '@/assets/ai-tool-3.avif'
@@ -21,7 +22,13 @@ const Features = () => {
         {/* Cards Grid */}
         <div className="grid grid-cols-3 gap-6">
           {/* Time Saving Card - Spans 2 columns */}
-          <div className="col-span-2 border border-[#e2e8f0] rounded-[24px] p-6 bg-[#f8fafc]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="col-span-2 border border-[#e2e8f0] rounded-[24px] p-6 bg-[#f8fafc]"
+          >
             {/* Image */}
             <div className="mb-6 rounded-xl overflow-hidden">
               <img src={aiTool1} alt="Time Saving" className="w-full h-auto" />
@@ -32,10 +39,16 @@ const Features = () => {
             <p className="text-[16px] text-[#292f38]">
               Search for discussions, create folders, add tags, export data, and much more.
             </p>
-          </div>
+          </motion.div>
 
           {/* Web Search Card */}
-          <div className="border border-[#e2e8f0] rounded-[24px] p-6 bg-[#f8fafc]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="border border-[#e2e8f0] rounded-[24px] p-6 bg-[#f8fafc]"
+          >
             {/* Image */}
             <div className="mb-6 rounded-xl overflow-hidden">
               <img src={aiTool2} alt="Web Search" className="w-full h-auto" />
@@ -46,10 +59,16 @@ const Features = () => {
             <p className="text-[16px] text-[#292f38]">
               Unleash the potential of cutting-edge AI through a seamless internet experience.
             </p>
-          </div>
+          </motion.div>
 
           {/* Multiple Models Card */}
-          <div className="border border-[#e2e8f0] rounded-[24px] p-6 bg-[#f8fafc]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="border border-[#e2e8f0] rounded-[24px] p-6 bg-[#f8fafc]"
+          >
             {/* Image */}
             <div className="mb-6 rounded-xl overflow-hidden">
               <img src={aiTool3} alt="Multiple Models" className="w-full h-auto" />
@@ -60,10 +79,16 @@ const Features = () => {
             <p className="text-[16px] text-[#292f38]">
               Switch between models in the same chat: Text, images, web search.
             </p>
-          </div>
+          </motion.div>
 
           {/* Prompt Library Card */}
-          <div className="border border-[#e2e8f0] rounded-[24px] p-6 bg-[#f8fafc]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="border border-[#e2e8f0] rounded-[24px] p-6 bg-[#f8fafc]"
+          >
             {/* Image */}
             <div className="mb-6 rounded-xl overflow-hidden">
               <img src={aiTool4} alt="Prompt Library" className="w-full h-auto" />
@@ -74,10 +99,16 @@ const Features = () => {
             <p className="text-[16px] text-[#292f38]">
               Enjoy exclusive prompts categorized by marketing, social media, HR, sales, and much more.
             </p>
-          </div>
+          </motion.div>
 
           {/* Chat Synchronization Card */}
-          <div className="border border-[#e2e8f0] rounded-[24px] p-6 bg-[#f8fafc]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="border border-[#e2e8f0] rounded-[24px] p-6 bg-[#f8fafc]"
+          >
             {/* Image */}
             <div className="mb-6 rounded-xl overflow-hidden">
               <img src={aiTool5} alt="Chat Synchronization" className="w-full h-auto" />
@@ -88,7 +119,7 @@ const Features = () => {
             <p className="text-[16px] text-[#292f38]">
               Sync and back up your chat data across multiple devices.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
