@@ -48,7 +48,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[64px] leading-tight font-semibold text-[#020617] mb-6 max-w-4xl"
+            className="text-[64px] leading-[74px] font-medium text-[#020617] mb-6 max-w-4xl"
           >
             Access all your AI tools in a single platform
           </motion.h1>

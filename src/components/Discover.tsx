@@ -14,7 +14,7 @@ const Discover = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-[64px] font-semibold text-[#030712] mb-4 leading-tight">
+          <h2 className="text-[64px] font-medium text-[#030712] mb-4 leading-[74px]">
             Discover unlimited creative<br />possibilities
           </h2>
           <p className="text-[20px] font-normal text-[#475569]">

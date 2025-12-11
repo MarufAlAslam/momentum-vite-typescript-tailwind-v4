@@ -10,7 +10,7 @@ const Features = () => {
       <div className="px-12 max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-[64px] font-semibold text-[#030712] mb-4 leading-tight">
+          <h2 className="text-[64px] font-medium text-[#030712] mb-4 leading-[74px]">
             All AI tools are just in one<br />place and simple to use
           </h2>
           <p className="text-[20px] font-normal text-[#475569]">
