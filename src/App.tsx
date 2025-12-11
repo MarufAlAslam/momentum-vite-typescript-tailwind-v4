@@ -8,6 +8,7 @@ import SimpleText from '@/components/SimpleText'
 import Testimonials from '@/components/Testimonials'
 import Pricing from '@/components/Pricing'
 import FAQ from '@/components/FAQ'
+import CTA from '@/components/CTA'
 
 function App() {
   useLenis()
@@ -24,6 +25,7 @@ function App() {
         <Testimonials />
         <Pricing />
         <FAQ />
+        <CTA />
       </main>
     </div>
   )
