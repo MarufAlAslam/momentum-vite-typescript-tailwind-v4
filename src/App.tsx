@@ -5,6 +5,7 @@ import Marquee from '@/components/Marquee'
 import Features from '@/components/Features'
 import Discover from '@/components/Discover'
 import SimpleText from '@/components/SimpleText'
+import Testimonials from '@/components/Testimonials'
 
 function App() {
   useLenis()
@@ -18,6 +19,7 @@ function App() {
         <Features />
         <Discover />
         <SimpleText />
+        <Testimonials />
       </main>
     </div>
   )
