@@ -15,7 +15,7 @@ const logos = [
 
 const Marquee = () => {
   return (
-    <section className="py-16 overflow-hidden bg-white border-b" style={{ borderColor: 'rgba(0, 0, 0, 0.08)' }}>
+    <section className="py-16 overflow-hidden bg-white">
       <div className="px-12">
         <p className="text-center text-[16px] font-normal text-[#64748b] mb-12">
           Used by thousands of fast-growing startups.
