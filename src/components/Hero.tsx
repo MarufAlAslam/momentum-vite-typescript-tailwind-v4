@@ -8,9 +8,9 @@ const Hero = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false)
 
   return (
-    <section className="relative min-h-screen pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-screen pt-36 pb-16 overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${heroBg})`,
@@ -21,7 +21,7 @@ const Hero = () => {
       />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6">
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center text-center max-w-[750px] mx-auto">
           {/* Top Pill */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -32,13 +32,13 @@ const Hero = () => {
             <span className="text-[12px] font-normal text-[#475569]">
               ✨ We released V2 open API
             </span>
-            <a 
-              href="#changelog" 
+            <a
+              href="#changelog"
               className="text-[12px] font-normal text-[#3B82F6] hover:underline inline-flex items-center gap-1"
             >
               See changelog
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="mt-0.5">
-                <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
           </motion.div>
@@ -70,42 +70,42 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col lg:flex-row items-center gap-3 lg:gap-4 mb-16 w-full lg:w-auto px-6 lg:px-0"
           >
-            <button 
+            <button
               onClick={() => setIsVideoOpen(true)}
-              className="w-full lg:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-[15px] font-normal text-gray-700 bg-white border border-gray-200 rounded-full hover:bg-gray-50 transition-all"
+              className="w-full lg:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 text-[15px] font-normal text-gray-700 bg-white border border-gray-300 rounded-full hover:bg-gray-50 transition-all"
             >
               <Play className="w-4 h-4 fill-current" />
               See how it works
             </button>
-            <button className="w-full lg:w-auto px-6 py-3 text-[15px] font-normal text-white bg-[#020617] rounded-full hover:bg-[#020617]/90 transition-all">
+            <button className="w-full lg:w-auto px-4 py-2 text-[15px] font-normal text-white bg-[#020617] rounded-full hover:bg-[#020617]/90 transition-all">
               Start for free
             </button>
           </motion.div>
-
-          {/* Hero Image */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="w-full max-w-[1280px] p-2.5 lg:p-6 rounded-[16px] lg:rounded-[28px]"
-            style={{ backgroundColor: '#f9fafb' }}
-          >
-            <img 
-              src={heroImage} 
-              alt="Platform interface" 
-              className="w-full h-auto rounded-lg shadow-md"
-            />
-          </motion.div>
         </div>
+
+        {/* Hero Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="w-full p-2.5 lg:p-6 rounded-[16px] max-w-[1100px] mx-auto lg:rounded-[28px]"
+          style={{ backgroundColor: '#f9fafb' }}
+        >
+          <img
+            src={heroImage}
+            alt="Platform interface"
+            className="w-full h-auto rounded-lg shadow-md"
+          />
+        </motion.div>
       </div>
 
       {/* Video Modal */}
       {isVideoOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
           onClick={() => setIsVideoOpen(false)}
         >
-          <div 
+          <div
             className="relative w-full max-w-4xl mx-4"
             onClick={(e) => e.stopPropagation()}
           >
