@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { Marquee } from './ui/marquee'
 
 const testimonials = [
   {
@@ -91,10 +93,10 @@ const StarRating = ({ rating }: { rating: number }) => {
       {[...Array(5)].map((_, index) => {
         const isFilled = index < Math.floor(rating)
         const isHalf = index === Math.floor(rating) && rating % 1 !== 0
-        
+
         return (
           <div key={index} className="relative">
-            <Star 
+            <Star
               className={`w-4 h-4 ${isFilled ? 'fill-[#fb923c] text-[#fb923c]' : 'text-gray-300'}`}
             />
             {isHalf && (
@@ -109,6 +111,39 @@ const StarRating = ({ rating }: { rating: number }) => {
   )
 }
 
+const ReviewCard = ({
+  img,
+  name,
+  username,
+  body,
+}: {
+  img: string
+  name: string
+  username: string
+  body: string
+}) => {
+  return (
+    <figure
+      className={cn(
+        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+        // light styles
+        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+        // dark styles
+        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+      )}
+    >
+      <div className="flex flex-row items-center gap-2">
+        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+        <div className="flex flex-col">
+          <figcaption className="text-sm font-medium dark:text-white">{name}</figcaption>
+          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+        </div>
+      </div>
+      <blockquote className="mt-2 text-sm">{body}</blockquote>
+    </figure>
+  )
+}
+
 const Testimonials = () => {
   // Split testimonials into two rows for marquee
   const firstRow = testimonials.slice(0, 5)
@@ -116,7 +151,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-20 bg-[#f8fafc]">
-      <div className="md:px-12 px-5 max-w-[1400px] mx-auto">
+      <div className="md:px-12 px-0 max-w-[1400px] mx-auto">
         {/* Static Grid for desktop */}
         <div className="hidden lg:grid grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
@@ -130,16 +165,16 @@ const Testimonials = () => {
             >
               {/* Star Rating */}
               <StarRating rating={testimonial.rating} />
-              
+
               {/* Feedback */}
               <p className="text-[16px] text-[#020617] font-normal mb-6 leading-relaxed">
                 {testimonial.feedback}
               </p>
-              
+
               {/* Author Info */}
               <div className="flex items-center gap-3">
-                <img 
-                  src={testimonial.author.avatar} 
+                <img
+                  src={testimonial.author.avatar}
                   alt={testimonial.author.name}
                   className="w-[54px] h-[54px] rounded-full object-cover"
                 />
@@ -156,96 +191,39 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Marquee for mobile/tablet */}
-        <div className="lg:hidden space-y-6">
-          {/* First Row Marquee */}
-          <div className="relative overflow-hidden">
-            <motion.div
-              className="flex gap-6"
-              animate={{ x: [0, "-50%"] }}
-              transition={{
-                duration: 7.5,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            >
-              {[...firstRow, ...firstRow].map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="bg-white border border-[#e2e8f0] rounded-2xl p-6 shadow-sm w-[85%] md:w-[45%] flex-shrink-0"
-                >
-                  {/* Star Rating */}
-                  <StarRating rating={testimonial.rating} />
-                  
-                  {/* Feedback */}
-                  <p className="text-[16px] text-[#020617] font-normal mb-6 leading-relaxed">
-                    {testimonial.feedback}
-                  </p>
-                  
-                  {/* Author Info */}
-                  <div className="flex items-center gap-3">
-                    <img 
-                      src={testimonial.author.avatar} 
-                      alt={testimonial.author.name}
-                      className="w-[54px] h-[54px] rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="text-[16px] text-[#020617] font-normal">
-                        {testimonial.author.name}
-                      </p>
-                      <p className="text-[16px] text-[#475569] font-normal">
-                        {testimonial.author.designation}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
+        {/* Marquee for mobile/tablet (magicui Marquee) */}
+        <div className="lg:hidden">
+          <div className="relative flex w-full flex-col items-center justify-center overflow-hidden space-y-6">
+            <div className="w-full">
+              <Marquee pauseOnHover className="[--duration:7.5s]">
+                {firstRow.map((t, i) => (
+                  <ReviewCard
+                    key={t.author.name + String(i)}
+                    img={t.author.avatar}
+                    name={t.author.name}
+                    username={t.author.designation}
+                    body={t.feedback}
+                  />
+                ))}
+              </Marquee>
+            </div>
 
-          {/* Second Row Marquee - Reverse Direction */}
-          <div className="relative overflow-hidden">
-            <motion.div
-              className="flex gap-6"
-              animate={{ x: ["-50%", "0%"] }}
-              transition={{
-                duration: 6.25,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            >
-              {[...secondRow, ...secondRow].map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="bg-white border border-[#e2e8f0] rounded-2xl p-6 shadow-sm w-[85%] md:w-[45%] flex-shrink-0"
-                >
-                  {/* Star Rating */}
-                  <StarRating rating={testimonial.rating} />
-                  
-                  {/* Feedback */}
-                  <p className="text-[16px] text-[#020617] font-normal mb-6 leading-relaxed">
-                    {testimonial.feedback}
-                  </p>
-                  
-                  {/* Author Info */}
-                  <div className="flex items-center gap-3">
-                    <img 
-                      src={testimonial.author.avatar} 
-                      alt={testimonial.author.name}
-                      className="w-[54px] h-[54px] rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="text-[16px] text-[#020617] font-normal">
-                        {testimonial.author.name}
-                      </p>
-                      <p className="text-[16px] text-[#475569] font-normal">
-                        {testimonial.author.designation}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
+            <div className="w-full">
+              <Marquee reverse pauseOnHover className="[--duration:6.25s]">
+                {secondRow.map((t, i) => (
+                  <ReviewCard
+                    key={t.author.name + String(i)}
+                    img={t.author.avatar}
+                    name={t.author.name}
+                    username={t.author.designation}
+                    body={t.feedback}
+                  />
+                ))}
+              </Marquee>
+            </div>
+
+            <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r h-full top-0 m-0"></div>
+            <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l h-full top-0 m-0"></div>
           </div>
         </div>
       </div>
