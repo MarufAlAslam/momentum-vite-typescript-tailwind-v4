@@ -1,69 +1,6 @@
-import { useRef, useEffect } from 'react'
+// import { useRef, useEffect } from 'react'
 import { ArrowRight } from 'lucide-react'
-import globeVideo from '@/assets/globe.mp4'
-
-function Globe() {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const isDragging = useRef(false)
-  const startX = useRef(0)
-  const startTime = useRef(0)
-
-  useEffect(() => {
-    const video = videoRef.current
-    const container = containerRef.current
-    if (!video || !container) return
-
-    const handleMouseDown = (e: MouseEvent) => {
-      isDragging.current = true
-      startX.current = e.clientX
-      startTime.current = video.currentTime
-      video.pause()
-    }
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isDragging.current) return
-      
-      const deltaX = e.clientX - startX.current
-      const sensitivity = 0.01 // Adjust for faster/slower scrubbing
-      const newTime = startTime.current + (deltaX * sensitivity)
-      
-      // Clamp between 0 and video duration
-      video.currentTime = Math.max(0, Math.min(newTime, video.duration))
-    }
-
-    const handleMouseUp = () => {
-      if (isDragging.current) {
-        isDragging.current = false
-        video.play()
-      }
-    }
-
-    container.addEventListener('mousedown', handleMouseDown)
-    window.addEventListener('mousemove', handleMouseMove)
-    window.addEventListener('mouseup', handleMouseUp)
-
-    return () => {
-      container.removeEventListener('mousedown', handleMouseDown)
-      window.removeEventListener('mousemove', handleMouseMove)
-      window.removeEventListener('mouseup', handleMouseUp)
-    }
-  }, [])
-
-  return (
-    <div ref={containerRef} className="w-full h-full cursor-grab active:cursor-grabbing">
-      <video
-        ref={videoRef}
-        src={globeVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="w-full h-full object-cover pointer-events-none"
-      />
-    </div>
-  )
-}
+import { Globe } from './ui/globe'
 
 const CTA = () => {
   return (
@@ -87,7 +24,7 @@ const CTA = () => {
 
             {/* Right Globe - Video */}
             <div className='pt-0 lg:pt-20 flex justify-end'>
-              <div className=' w-4/5 md:mt-0 mt-6 md:w-1/2 lg:w-full'>
+              <div className='ml-auto w-4/5 md:mt-0 mt-6 md:w-1/2 lg:w-full'>
                 <Globe />
               </div>
             </div>
