@@ -16,17 +16,17 @@ const logos = [
 const Marquee = () => {
   return (
     <section className="py-16 overflow-hidden bg-white">
-      <div className="px-12">
+      <div className="md:px-12">
         <p className="text-center text-[16px] font-normal text-[#64748b] mb-12">
           Used by thousands of fast-growing startups.
         </p>
 
         <div className="relative overflow-hidden">
           {/* Left fade - hidden on mobile */}
-          <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="block absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
           
           {/* Right fade - hidden on mobile */}
-          <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
           
           {/* Seamless infinite scroll - faster on mobile */}
           <motion.div
@@ -47,7 +47,7 @@ const Marquee = () => {
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="h-8 lg:h-10 w-auto opacity-40 hover:opacity-60 transition-opacity"
+                  className="h-8 lg:h-10 w-auto transition-opacity"
                 />
               </div>
             ))}

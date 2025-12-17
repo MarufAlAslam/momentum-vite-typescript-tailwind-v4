@@ -57,10 +57,10 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
-          <div className="fixed inset-0 bg-white pt-[60px]">
+          <div className="fixed inset-0 bg-white/50 backdrop-blur-md pt-[60px]">
             <div className="px-6 py-8 flex flex-col h-full">
               {/* Navigation Links */}
-              <nav className="flex flex-col space-y-6 mb-8">
+              <nav className="flex flex-col space-y-6 mb-4">
                 <a 
                   href="#features" 
                   className="text-[20px] font-normal text-[#64748b] hover:text-[#030616] transition-colors text-center"
@@ -92,11 +92,11 @@ const Navbar = () => {
               </nav>
 
               {/* Buttons */}
-              <div className="flex flex-col space-y-4 mt-auto">
-                <button className="w-full px-6 py-4 text-[16px] font-medium text-white bg-[#030616] rounded-full hover:bg-[#030616]/90 transition-all">
+              <div className="flex flex-col space-y-4">
+                <button className="w-full px-6 py-2 text-[16px] font-medium text-white bg-[#030616] rounded-full hover:bg-[#030616]/90 transition-all">
                   Get template
                 </button>
-                <button className="text-[16px] font-normal text-[#64748b] hover:text-[#030616] transition-colors py-2">
+                <button className="text-[16px] font-normal text-[#64748b] hover:text-[#030616] transition-colors py-0">
                   Sign in
                 </button>
               </div>

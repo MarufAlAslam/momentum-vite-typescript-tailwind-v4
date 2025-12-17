@@ -8,7 +8,7 @@ const Hero = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false)
 
   return (
-    <section className="relative min-h-screen pt-36 pb-16 overflow-hidden">
+    <section className="relative md:min-h-screen pt-36 pb-16 overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 z-0"
