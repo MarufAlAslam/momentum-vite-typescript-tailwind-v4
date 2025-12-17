@@ -83,8 +83,8 @@ nav.fixed {
 }
 
 .absolute.globe {
-  right: -10%;
-  top: -10%;
+  right: -20%;
+  top: -20%;
 }
 
 .from-background.pointer-events-none.absolute.inset-y-0.left-0.w-1\/4.bg-gradient-to-r.h-full.top-0.m-0,
@@ -119,5 +119,23 @@ nav.fixed {
 
   .animate-marquee-vertical {
     animation: marquee-vertical var(--duration) infinite linear;
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee var(--duration) infinite linear;
+  }
+
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration) infinite linear;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .absolute.globe {
+    right: -20%;
+    top: -80%;
   }
 }

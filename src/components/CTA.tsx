@@ -23,7 +23,7 @@ const CTA = () => {
             </div>
 
             {/* Right Globe - Video */}
-            <div className='pt-0 lg:pt-20 flex justify-end lg:min-h-[500px] md:min-h-[400px] sm:min-h-[300px] min-h-[200px] relative'>
+            <div className='pt-0 lg:pt-20 flex justify-end sm:min-h-[300px] min-h-[200px] relative'>
               <div className='ml-auto w-4/5 md:mt-0 mt-6 md:w-1/2 lg:w-full'>
                 <Globe />
               </div>

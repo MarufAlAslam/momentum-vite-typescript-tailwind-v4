@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
+import { Marquee } from './ui/marquee'
 import blockly from '@/assets/blockly.png'
 import cloudly from '@/assets/cloudly.png'
 import camera from '@/assets/camera.png'
@@ -13,7 +14,7 @@ const logos = [
   { name: 'Startup', src: startup },
 ]
 
-const Marquee = () => {
+const LogoMarquee = () => {
   return (
     <section className="py-16 overflow-hidden bg-white">
       <div className="md:px-12">
@@ -28,22 +29,10 @@ const Marquee = () => {
           {/* Right fade - hidden on mobile */}
           <div className="block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
           
-          {/* Seamless infinite scroll - faster on mobile */}
-          <motion.div
-            className="flex gap-8 lg:gap-[54px] items-center"
-            animate={{ x: ["-50%", "0%"] }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 15, // Faster on mobile (was 30)
-                ease: "linear",
-              },
-            }}
-          >
-            {/* Duplicate logos twice for seamless loop */}
-            {[...logos, ...logos].map((logo, index) => (
-              <div key={index} className="flex-shrink-0">
+          {/* Seamless infinite scroll (magicui Marquee) - faster on mobile */}
+          <Marquee reverse pauseOnHover className="[--duration:15s] flex items-center">
+            {logos.map((logo, index) => (
+              <div key={index} className="flex-shrink-0 mx-5">
                 <img
                   src={logo.src}
                   alt={logo.name}
@@ -51,11 +40,11 @@ const Marquee = () => {
                 />
               </div>
             ))}
-          </motion.div>
+          </Marquee>
         </div>
       </div>
     </section>
   )
 }
 
-export default Marquee
+export default LogoMarquee
