@@ -113,21 +113,19 @@ const Pricing = () => {
           <div className="inline-flex items-center gap-2 p-1 bg-[#f8fafc] rounded-full border border-[#e2e8f0]">
             <button
               onClick={() => setBillingCycle('monthly')}
-              className={`px-6 py-2 rounded-full text-[14px] transition-all ${
-                billingCycle === 'monthly'
-                  ? 'bg-white text-[#020617] shadow-lg font-medium'
-                  : 'text-[#475569]'
-              }`}
+              className={`px-6 py-2 rounded-full text-[14px] transition-all ${billingCycle === 'monthly'
+                ? 'bg-white text-[#020617] shadow-lg font-medium'
+                : 'text-[#475569]'
+                }`}
             >
               Monthly
             </button>
             <button
               onClick={() => setBillingCycle('annual')}
-              className={`flex items-center gap-2 px-6 py-2 rounded-full text-[14px] transition-all ${
-                billingCycle === 'annual'
-                  ? 'bg-white text-[#020617] shadow-lg font-medium'
-                  : 'text-[#475569]'
-              }`}
+              className={`flex items-center gap-2 px-6 py-2 rounded-full text-[14px] transition-all ${billingCycle === 'annual'
+                ? 'bg-white text-[#020617] shadow-lg font-medium'
+                : 'text-[#475569]'
+                }`}
             >
               Annual
               <span className="px-2 py-0.5 text-[12px] font-normal text-[#6d28d9] rounded-full" style={{ backgroundColor: 'rgb(237, 233, 254)' }}>
@@ -149,19 +147,22 @@ const Pricing = () => {
               className="relative border border-[#e2e8f0] rounded-[24px] p-8 shadow-sm"
               style={{ backgroundColor: plan.popular ? 'rgb(237, 233, 254)' : 'white' }}
             >
-              {/* Most Popular Badge */}
-              {plan.popular && (
-                <div className="absolute top-8 right-8">
-                  <span className="px-3 py-2 text-[12px] font-normal text-[#7c3aed] bg-white rounded-full">
-                    Most popular
-                  </span>
-                </div>
-              )}
 
-              {/* Plan Name */}
-              <h3 className="text-[32px] font-medium text-[#020617] mb-3">
-                {plan.name}
-              </h3>
+              <div className="flex justify-between items-center mb-3">
+                {/* Plan Name */}
+                <h3 className="text-[32px] font-medium text-[#020617]">
+                  {plan.name}
+                </h3>
+                {/* Most Popular Badge */}
+                {plan.popular && (
+                  <div>
+                    <span className="px-3 py-2 text-[12px] font-normal text-[#7c3aed] bg-white rounded-full">
+                      Most popular
+                    </span>
+                  </div>
+                )}
+              </div>
+
 
               {/* Plan Subtitle */}
               <p className="text-[16px] font-normal text-[#475569] mb-6">
@@ -188,11 +189,10 @@ const Pricing = () => {
 
               {/* CTA Button */}
               <button
-                className={`w-full py-3 rounded-full text-[16px] font-medium transition-all ${
-                  plan.popular
-                    ? 'bg-[#020617] text-white hover:bg-[#020617]/90'
-                    : 'bg-white text-[#020617] border border-[#e2e8f0] hover:bg-[#f8fafc]'
-                }`}
+                className={`w-full py-3 rounded-full text-[16px] font-medium transition-all ${plan.popular
+                  ? 'bg-[#020617] text-white hover:bg-[#020617]/90'
+                  : 'bg-white text-[#020617] border border-[#e2e8f0] hover:bg-[#f8fafc]'
+                  }`}
                 style={{ boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.05)' }}
               >
                 Get started
